@@ -2,11 +2,12 @@
 
 namespace Calculator
 {
+
     class Program
     {
         static void Main(string[] args)
         {
-            string menu = "Select 1 for Add\nSelect 2 for Subtract\nSelect 3 for Multiple\nSelect 4 for Multiply";
+            string menu = "Select 1 for Add\nSelect 2 for Subtract\nSelect 3 for Multiply\nSelect 4 for Divide";
             int[] userInput = new int[3];
             
             //Print Menu
@@ -24,27 +25,64 @@ namespace Calculator
             }
 
             //Return Output
-
+            GetResult(userInput[0], userInput[1], userInput[2]);
         }
 
+        //Add method
         static int Add(int x, int y)
         {
             return x + y;
         }
 
+        //Subtract method
         static int Subtract(int x, int y)
         {
             return x - y;
         }
 
+        //Multiplication method
         static int Multiply(int x, int y)
         {
             return x * y;
         }
 
+        //Division method
         static int Divide(int x, int y)
         {
             return x / y;
+        }
+
+        //GetResult method. Runs the selected operation with the given operands
+        static void GetResult(int choice, int x, int y)
+        {
+            switch (choice)
+            {
+                //Addition
+                case 1:
+                    Console.WriteLine($"{x} + {y} = {Add(x, y)}");
+                    break;
+                //Subtraction
+                case 2:
+                    Console.WriteLine($"{x} - {y} = {Subtract(x, y)}");
+                    break;
+                //Multiplication
+                case 3:
+                    Console.WriteLine($"{x} * {y} = {Multiply(x, y)}");
+                    break;
+                //Division
+                case 4:
+                    if (y == 0)
+                    {
+                        Console.WriteLine("Cannot Divide by zero. Goodbye.");
+                        break;
+                    }
+                    Console.WriteLine($"{x} / {y} = {Divide(x, y)}");
+                    break;
+                //Operation Unrecognized
+                default:
+                    Console.WriteLine("Selected operation not recognized. Goodbye.");
+                    return;
+            }
         }
     }
 }
