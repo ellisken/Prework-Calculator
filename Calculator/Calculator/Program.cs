@@ -2,7 +2,7 @@
 
 namespace Calculator
 {
-
+    //Simple calculator program that does not perform error handling for non-integer inputs
     class Program
     {
         static void Main(string[] args)
