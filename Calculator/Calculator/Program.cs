@@ -6,7 +6,10 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            
+            //Print Menu
+            //Get User Choice
+            //Get User input (operands)
+            //Return Output
         }
 
         static int Add(int x, int y)
@@ -17,6 +20,16 @@ namespace Calculator
         static int Subtract(int x, int y)
         {
             return x - y;
+        }
+
+        static int Multiply(int x, int y)
+        {
+            return x * y;
+        }
+
+        static int Divide(int x, int y)
+        {
+            return x / y;
         }
     }
 }
