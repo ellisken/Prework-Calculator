@@ -47,9 +47,10 @@ namespace Calculator
         }
 
         //Division method
-        static int Divide(int x, int y)
+        static float Divide(int x, int y)
         {
-            return x / y;
+            float result = x / (float)y;
+            return result;
         }
 
         //GetResult method. Runs the selected operation with the given operands
